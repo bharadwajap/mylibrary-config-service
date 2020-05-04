@@ -30,7 +30,7 @@
 	            sh "sudo docker build -t ${projectName} ."
 	            
 		        withCredentials([usernamePassword(credentialsId: gitCredentials, usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS')]) {
-					sh "sudo docker run --restart always --name=${projectName} -e CONFIG_REPO_USER=${env.GIT_USER} -e CONFIG_REPO_PWD=${env.GIT_PASS} -td ${projectName}"
+					sh "sudo docker run --restart always --name=${projectName} -e CONFIG_REPO_USER=${env.GIT_USER} -e CONFIG_REPO_PWD=${env.GIT_PASS} -p 8888:8888 -td ${projectName}"
 				}
 			}
         } catch (def e) {
