@@ -3,7 +3,7 @@
 
     def branch
 	def projectName = 'mylibrary-config-service'
-	def gitCredentials = 'mylibrary-git'
+	def gitCredentials = 'mylibrary-github'
     // pipeline
     node(javaAgent) {
 
