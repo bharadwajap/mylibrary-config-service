@@ -1,11 +1,11 @@
 #!groovy
-    def javaAgent = 'master'
+    def dockerAgent = 'docker-slave'
 
     def branch
 	def projectName = 'mylibrary-config-service'
 	def gitCredentials = 'mylibrary-github'
     // pipeline
-    node(javaAgent) {
+    node(dockerAgent) {
 
         try {
             stage('Collect info') {
