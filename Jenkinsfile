@@ -3,7 +3,7 @@
 
     def branch
 	def projectName = 'mylibrary-config-service'
-
+	def gitCredentials = 'mylibrary-git'
     // pipeline
     node(javaAgent) {
 
@@ -28,9 +28,11 @@
 	                sh "sudo docker --config=\"${WORKSPACE}\" rm ${projectName}"
 	            }
 	            sh "sudo docker build -t ${projectName} ."
-	            sh "sudo docker run --restart always --name=${projectName} -td ${projectName}"
+	            
+		        withCredentials([usernamePassword(credentialsId: gitCredentials, usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS')]) {
+					sh "sudo docker run --restart always --name=${projectName} -e CONFIG_REPO_USER=${env.GIT_USER} -e CONFIG_REPO_PWD=${env.GIT_PASS} -td ${projectName}"
+				}
 			}
-
         } catch (def e) {
 			print "Exception occurred while running the pipeline"+ e
         } finally {

@@ -2,12 +2,14 @@ spring:
   application:
     name: mylibrary-config-service
   profiles:
-    active: native    
+    active: native
   cloud:
     config:
       server:
-        native:
-          search-locations: "D:/Work/Java_Assignments/CommerzBank/Codebase/mylibrary-config-service"
+        git:
+          uri: https://infygit.ad.infosys.com/mylibrary/mylibrary-config-service.git
+          username: ${CONFIG_REPO_USER}
+          password: ${CONFIG_REPO_PWD}
 
 server:
   port: 8888
