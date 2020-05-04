@@ -7,7 +7,7 @@ spring:
     config:
       server:
         git:
-          uri: https://infygit.ad.infosys.com/mylibrary/mylibrary-config-service.git
+          uri: https://github.com/bharadwajap/mylibrary-config-service.git
           username: ${CONFIG_REPO_USER}
           password: ${CONFIG_REPO_PWD}
 
