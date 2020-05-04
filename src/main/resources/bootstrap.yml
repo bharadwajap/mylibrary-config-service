@@ -1,13 +1,11 @@
 spring:
   application:
     name: mylibrary-config-service
-  profiles:
-    active: native
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/bharadwajap/mylibrary-config-service.git
+          uri: ${GIT_REPO_URI}
           username: ${CONFIG_REPO_USER}
           password: ${CONFIG_REPO_PWD}
 
