@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:/opt/app/mylibrary-h2-db/mylibrary-user-db
+  h2: 
+    console:
+      enabled: true
+      path: /mylibrary/users/h2-console    
+server:
+  port: 8082

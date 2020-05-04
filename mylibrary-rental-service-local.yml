@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:/opt/app/mylibrary-h2-db/mylibrary-rental-db
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false
+  h2: 
+    console:
+      enabled: true
+      path: /mylibrary/rentals/h2-console
+server:
+  port: 8083

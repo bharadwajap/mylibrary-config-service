@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: mylibrary-config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${GIT_REPO_URI}
+          username: ${CONFIG_REPO_USER}
+          password: ${CONFIG_REPO_PWD}
+
+server:
+  port: 8888
