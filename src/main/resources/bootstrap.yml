@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: mylibrary-config-service
+  profiles:
+    active: native    
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: "D:/Work/Java_Assignments/CommerzBank/Codebase/mylibrary-config-service"
+
+server:
+  port: 8888

@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:D:/Work/Java_Assignments/CommerzBank/Codebase/mylibrary-h2-db/mylibrary-rental-db
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false
+
+server:
+  port: 8083
