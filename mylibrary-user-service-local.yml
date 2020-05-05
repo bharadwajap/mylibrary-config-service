@@ -4,6 +4,8 @@ spring:
   h2: 
     console:
       enabled: true
-      path: /mylibrary/users/h2-console    
+      path: /mylibrary/users/h2-console
+      settings:
+        web-allow-others: true
 server:
   port: 8082
