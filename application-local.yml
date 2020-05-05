@@ -6,4 +6,28 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      ddl-auto: none   
+      ddl-auto: none
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  security:
+    enabled: false 
+  endpoint:
+    health:
+      show-details: always
+security: 
+  basic: 
+    enabled: false
+  ignored: 
+    - /health
+    - /swagger-ui.html
+    - /webjars/**
+    - /swagger-resources/**
+    - /images/**
+    - /css/**
+    - /v2/**
+    - /catalogAll/**
+    - /catalogAll      
