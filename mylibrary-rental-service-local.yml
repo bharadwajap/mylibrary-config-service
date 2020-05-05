@@ -8,5 +8,7 @@ spring:
     console:
       enabled: true
       path: /mylibrary/rentals/h2-console
+      settings:
+        web-allow-others: true       
 server:
   port: 8083
