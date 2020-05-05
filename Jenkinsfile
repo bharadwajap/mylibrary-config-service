@@ -1,5 +1,5 @@
 #!groovy
-    def dockerAgent = 'docker-slave'
+    def dockerAgent = 'docker-slave2'
 
     def branch
 	def projectName = 'mylibrary-config-service'
