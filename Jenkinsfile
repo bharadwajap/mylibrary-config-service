@@ -28,10 +28,10 @@
 	                sh "docker stop ${projectName}"
 	                sh "docker rm ${projectName}"
 	            }
-	            sh "docker build -t ${projectName} ."
+	            sh "docker build -t mylibrary/${projectName} ."
 	            
 		        withCredentials([usernamePassword(credentialsId: gitCredentials, usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS')]) {
-					sh "docker run --restart always --network=host --name=${projectName} -e GIT_REPO_URI=${gitRepoUri} -e CONFIG_REPO_USER=${env.GIT_USER} -e CONFIG_REPO_PWD=${env.GIT_PASS} -td ${projectName}"
+					sh "docker run --restart always --network=host --name=${projectName} -e GIT_REPO_URI=${gitRepoUri} -e CONFIG_REPO_USER=${env.GIT_USER} -e CONFIG_REPO_PWD=${env.GIT_PASS} -td mylibrary/${projectName}"
 				}
 			}
         } catch (def e) {
